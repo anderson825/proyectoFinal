@@ -5,6 +5,8 @@
  */
 package proyectolavado;
 
+import vista.LoginView;
+
 /**
  *
  * @author Mauro
@@ -16,6 +18,8 @@ public class ProyectoLavado {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        LoginView v = new LoginView();
+        
     }
     
 }
