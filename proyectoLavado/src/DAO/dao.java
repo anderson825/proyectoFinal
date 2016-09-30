@@ -5,6 +5,8 @@
  */
 package DAO;
 
+
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -37,6 +39,7 @@ public class dao {
     }
     
     
+    
     public Cliente login(String user,String pass){
         
         Cliente c = null;
@@ -56,6 +59,15 @@ public class dao {
         
     }
     
-    
+    public List<Cliente> listarTodos(){
+        List<Cliente> lista;
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        lista = em.createQuery("select c from Cliente c").getResultList();
+        em.getTransaction().commit();
+        em.close();
+        return lista;
+        
+    }
     
 }

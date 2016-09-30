@@ -15,6 +15,7 @@ import modelo.Cliente;
  */
 public class LoginView extends javax.swing.JFrame {
 private dao d = new dao();
+public static Cliente cliente;
     /**
      * Creates new form LoginView
      */
@@ -126,6 +127,7 @@ private dao d = new dao();
         String pass = String.valueOf(txtPassword.getPassword());
         Cliente c = d.login(user, pass);
         if(c!=null){
+            cliente = c;
             PrincipalView p = new PrincipalView();
             this.dispose();
         }else{
